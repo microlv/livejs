@@ -1,0 +1,28 @@
+{
+  "name": "livejs",
+  "version": "0.0.1",
+  "description": "a common library for async/promise, simple and powerful",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microlv/livejs.git"
+  },
+  "keywords": [
+    "q",
+    "promise",
+    "async",
+    "then",
+    "task",
+    "$q",
+    "$l"
+  ],
+  "author": "andy.lv@live.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microlv/livejs/issues"
+  },
+  "homepage": "https://github.com/microlv/livejs"
+}
