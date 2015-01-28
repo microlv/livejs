@@ -1,7 +1,7 @@
-# FlatQ
+# livejs
 
 ![node version][version-image]
-[version-image]: https://img.shields.io/badge/flatq-v1-green.svg?style=livejs-square
+[version-image]: https://img.shields.io/badge/livejs-v1-green.svg?style=livejs-square
 
 ## Introduce
 
@@ -15,9 +15,9 @@ more function will coming soon...
 ```
 ## Download
 ```
-Check out [https://github.com/microlv/FlatQ.git];
-GitHub: https://github.com/microlv/FlatQ/;
-Wiki: http://microlv.github.io/FlatQ;
+Check out [https://github.com/microlv/livejs.git];
+GitHub: https://github.com/microlv/livejs/;
+Wiki: http://microlv.github.io/livejs;
 ```
 ## Features
 ```
@@ -31,7 +31,7 @@ Chrome, Nodejs
 
 ## Installation
 ```
-npm install flatq --save
+npm install livejs --save
 ```
 ## Usage
 
