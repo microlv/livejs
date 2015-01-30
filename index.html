@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>livejs by microlv</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>livejs</h1>
+        <h2>a common library for promise/then/async and events </h2>
+        <a href="https://github.com/microlv/livejs" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="livejs" class="anchor" href="#livejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>livejs</h1>
+
+<p><img src="https://img.shields.io/badge/livejs-v1-green.svg?style=livejs-square" alt="node version"></p>
+
+<h2>
+<a id="introduce" class="anchor" href="#introduce" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduce</h2>
+
+<pre><code>1.powerful promise library. simple and faster!
+2.use to do something like promise.
+3.shortcut name use $l.
+
+test case will coming soon...
+more function will coming soon...
+</code></pre>
+
+<h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<pre><code>Check out [https://github.com/microlv/livejs.git];
+GitHub: https://github.com/microlv/livejs/;
+Wiki: http://microlv.github.io/livejs;
+</code></pre>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<pre><code>1.like q/async, but the code is simple and powerful and useful.
+2.every function will inject a argument name 'defer', you can use it to resolve/reject.
+3.detect the defer.err to see parent function has error or not.
+</code></pre>
+
+<h2>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support</h2>
+
+<p>Chrome, Nodejs</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>npm install livejs --save
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>sample use:</p>
+
+<div class="highlight highlight-js"><pre>$l(<span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+    <span class="pl-s3">setTimeout</span>(<span class="pl-st">function</span> () {
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 1<span class="pl-pds">'</span></span>);
+        d.resolve(<span class="pl-s1"><span class="pl-pds">'</span>pass data to next function!<span class="pl-pds">'</span></span>);
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 1 step 2<span class="pl-pds">'</span></span>);
+    }, <span class="pl-c1">0</span>);
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 1 step 1<span class="pl-pds">'</span></span>);
+}).then(<span class="pl-st">function</span> (<span class="pl-vpf">d</span>, <span class="pl-vpf">data</span>) {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 2<span class="pl-pds">'</span></span>);
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(data);
+    d.reject();
+}).then(<span class="pl-st">function</span> () {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 3,function2 resolve will go here<span class="pl-pds">'</span></span>);
+}, <span class="pl-st">function</span> () {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 3 function2 reject will go here<span class="pl-pds">'</span></span>);
+}).then(<span class="pl-st">function</span> () {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>function 4<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<div class="highlight highlight-js"><pre>$l(<span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>factory task 1<span class="pl-pds">'</span></span>);
+    d.resolve();
+}).then(<span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>factory task 2<span class="pl-pds">'</span></span>);
+    d.resolve();
+}).series([
+    <span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>series task 3<span class="pl-pds">'</span></span>);
+        d.resolve();
+    }, <span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>series task 4<span class="pl-pds">'</span></span>);
+        d.resolve();
+    }
+], <span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>series task 5<span class="pl-pds">'</span></span>);
+}).then(<span class="pl-st">function</span> () {
+    <span class="pl-c">//why here don't work??</span>
+    <span class="pl-c">//because task 5 don't resolve the it!!!</span>
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>I can<span class="pl-cce">\'</span>t execute<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<p>series:</p>
+
+<div class="highlight highlight-js"><pre>$l.series([<span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+    <span class="pl-c">//use resolve will make the series execute next task!</span>
+    d.resolve();
+
+    <span class="pl-c">//step pass data</span>
+    <span class="pl-s">var</span> passData <span class="pl-k">=</span> {hello<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>world<span class="pl-pds">'</span></span>};
+    d.resolve(passData)
+
+    <span class="pl-c">//reject will make series stop.</span>
+    d.reject();
+
+}], <span class="pl-st">function</span> (<span class="pl-vpf">d</span>, <span class="pl-vpf">data</span>) {
+
+    <span class="pl-c">//I can get the data from //step pass data</span>
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(data);
+});</pre></div>
+
+<p>series example:</p>
+
+<div class="highlight highlight-js"><pre>$l.series([
+    <span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>series 1<span class="pl-pds">'</span></span>);
+        <span class="pl-s3">setTimeout</span>(<span class="pl-st">function</span> () {
+            d.resolve(<span class="pl-s1"><span class="pl-pds">'</span>series 2 finish!<span class="pl-pds">'</span></span>);
+        }, <span class="pl-c1">0</span>);
+    },
+    <span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>series 2<span class="pl-pds">'</span></span>);
+        <span class="pl-s3">setTimeout</span>(<span class="pl-st">function</span> () {
+            d.resolve(<span class="pl-s1"><span class="pl-pds">'</span>series 2 finish!<span class="pl-pds">'</span></span>);
+        }, <span class="pl-c1">0</span>);
+    },
+    <span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>series 3<span class="pl-pds">'</span></span>);
+        <span class="pl-s3">setTimeout</span>(<span class="pl-st">function</span> () {
+            d.resolve(<span class="pl-s1"><span class="pl-pds">'</span>series 3 finish!<span class="pl-pds">'</span></span>);
+        }, <span class="pl-c1">0</span>);
+    }
+], <span class="pl-st">function</span> (<span class="pl-vpf">d</span>,<span class="pl-vpf">result</span>) {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>finish<span class="pl-pds">'</span></span>);
+    d.resolve();
+}).then(<span class="pl-st">function</span> (<span class="pl-vpf">d</span>) {
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>then start<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<pre><code>Andy.lv@live.com;
+Any problem contact with me.
+</code></pre>
+
+<h2>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributors</h2>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/microlv/livejs/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/microlv/livejs/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/microlv/livejs"></a> is maintained by <a href="https://github.com/microlv">microlv</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
