@@ -1,8 +1,7 @@
 # livejs
 
-![node version][version-image]
-[version-image]: https://img.shields.io/badge/livejs-v1-green.svg?style=livejs-square
 [![Build Status](https://travis-ci.org/microlv/livejs.svg?branch=master)](https://travis-ci.org/microlv/livejs)
+[![Coverage Status](https://coveralls.io/repos/microlv/livejs/badge.svg)](https://coveralls.io/r/microlv/livejs)
 
 ## Introduce
 
