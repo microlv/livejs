@@ -1,6 +1,6 @@
 {
   "name": "livejs",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "description": "a common library for async/promise, simple and powerful",
   "main": "index.js",
   "scripts": {
