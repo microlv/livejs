@@ -26,10 +26,10 @@ gulp.task('scripts', ['clean'], function () {
     // Minify and copy all JavaScript (except vendor scripts)
     // with sourcemaps all the way down
     return gulp.src(paths.scripts)
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('live.min.js'))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('lib/'));
 });
 

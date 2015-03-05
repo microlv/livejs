@@ -1,3 +1,3 @@
-var $l = require('./lib/live');
+var livejs = require('./lib/live');
 
-module.exports = $l;
+module.exports = livejs;
